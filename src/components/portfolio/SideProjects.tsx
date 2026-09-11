@@ -89,7 +89,7 @@ export function SideProjects() {
       description="Small experiments and tools, mostly open source."
     >
       <Reveal>
-        <div className="relative mx-auto max-w-3xl px-4 sm:px-10 lg:px-16">
+        <div className="relative mx-auto max-w-md px-4 sm:px-10 lg:px-16">
           <Swiper
             className="side-projects-deck"
             modules={[EffectCards, Navigation]}
