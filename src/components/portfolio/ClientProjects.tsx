@@ -6,8 +6,21 @@ export function ProjectCard({ project }: { project: ClientProject }) {
   return (
     <article className="group">
       <div className="tile tile-hover aspect-video overflow-hidden p-0">
-        <div className="glow-indigo flex h-full w-full items-end justify-center p-8">
-          <div className="h-4/5 w-4/5 rounded-t-2xl border border-border bg-background shadow-[var(--shadow-lift)] transition-transform duration-500 group-hover:-translate-y-2" />
+        <div className="flex h-full w-full flex-col">
+          {/* macOS window chrome */}
+          <div className="flex items-center gap-2 border-b border-border bg-surface-muted px-4 py-3">
+            <span aria-hidden className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+            <span aria-hidden className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
+            <span aria-hidden className="h-3 w-3 rounded-full bg-[#28C840]" />
+            <span className="ml-3 truncate font-mono text-[11px] text-muted-foreground">
+              {project.title}
+            </span>
+          </div>
+          <div className="glow-indigo flex flex-1 items-center justify-center p-6">
+            <span className="font-mono text-xs text-muted-foreground/70">
+              [ Image / Screenshot Placeholder ]
+            </span>
+          </div>
         </div>
       </div>
       <h3 className="mt-6 text-xl font-bold">{project.title}</h3>
