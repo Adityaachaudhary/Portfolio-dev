@@ -58,6 +58,8 @@ export function SideProjectCard({ project }: { project: SideProject }) {
 }
 
 export function SideProjects() {
+  const loopedProjects = [...sideProjects, ...sideProjects];
+
   return (
     <Section
       id="side-projects"
@@ -72,7 +74,6 @@ export function SideProjects() {
             modules={[EffectCards, Navigation]}
             effect="cards"
             loop
-            loopAdditionalSlides={sideProjects.length}
             grabCursor
             navigation
             cardsEffect={{
@@ -82,8 +83,8 @@ export function SideProjects() {
               slideShadows: false,
             }}
           >
-            {sideProjects.map((project) => (
-              <SwiperSlide key={project.title}>
+            {loopedProjects.map((project, index) => (
+              <SwiperSlide key={`${project.title}-${index}`}>
                 <SideProjectCard project={project} />
               </SwiperSlide>
             ))}
