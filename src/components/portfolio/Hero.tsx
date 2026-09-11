@@ -4,7 +4,7 @@ import { AvailabilityBadge, Reveal } from "./primitives";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
-      <div aria-hidden className="glow-indigo pointer-events-none absolute inset-x-0 top-0 h-[520px] opacity-70" />
+      
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12">
         <Reveal>
           <AvailabilityBadge />

@@ -24,7 +24,7 @@ export function Services() {
               </div>
               <div
                 aria-hidden
-                className="absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-primary-foreground/15 blur-3xl"
+                className="absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-primary-foreground/10"
               />
             </Tile>
           </Reveal>

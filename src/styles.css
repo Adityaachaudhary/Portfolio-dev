@@ -168,11 +168,7 @@
 }
 
 @utility glow-indigo {
-  background-image: radial-gradient(
-    60% 60% at 50% 0%,
-    color-mix(in oklab, var(--primary) 22%, transparent),
-    transparent 70%
-  );
+  background-color: color-mix(in oklab, var(--primary) 8%, var(--surface));
 }
 
 .side-projects-deck {
