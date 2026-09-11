@@ -80,7 +80,7 @@ export type SideProject = {
   github?: string;
   demo?: string;
   /** Optional animated background rendered behind the card content. */
-  background?: "habit";
+  background?: "habit" | "chatbot";
   backgroundAlt?: string;
 };
 
@@ -92,7 +92,13 @@ export const sideProjects: SideProject[] = [
     background: "habit",
     backgroundAlt: "Animated habit tracking grid filling in day by day",
   },
-  { title: "Side Project 02", reason: "Why I built this — one line.", tags: ["Node.js", "CLI"] },
+  {
+    title: "AI Doc Chatbot",
+    reason: "Why I built this — one line.",
+    tags: ["Python", "Local LLM"],
+    background: "chatbot",
+    backgroundAlt: "Animated chatbot summarizing uploaded PDF and Excel files",
+  },
   { title: "Side Project 03", reason: "Why I built this — one line.", tags: ["Python", "Docker"] },
   { title: "Side Project 04", reason: "Why I built this — one line.", tags: ["Next.js", "Postgres"] },
   { title: "Side Project 05", reason: "Why I built this — one line.", tags: ["TypeScript", "API"] },
