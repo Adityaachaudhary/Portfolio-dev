@@ -79,16 +79,26 @@ export type SideProject = {
   tags: string[];
   github?: string;
   demo?: string;
+  /** Optional animated background rendered behind the card content. */
+  background?: "habit";
+  backgroundAlt?: string;
 };
 
 export const sideProjects: SideProject[] = [
-  { title: "Side Project 01", reason: "Why I built this — one line.", tags: ["React", "Vite"] },
+  {
+    title: "Habit Tracker",
+    reason: "Why I built this — one line.",
+    tags: ["React", "Vite"],
+    background: "habit",
+    backgroundAlt: "Animated habit tracking grid filling in day by day",
+  },
   { title: "Side Project 02", reason: "Why I built this — one line.", tags: ["Node.js", "CLI"] },
   { title: "Side Project 03", reason: "Why I built this — one line.", tags: ["Python", "Docker"] },
   { title: "Side Project 04", reason: "Why I built this — one line.", tags: ["Next.js", "Postgres"] },
   { title: "Side Project 05", reason: "Why I built this — one line.", tags: ["TypeScript", "API"] },
   { title: "Side Project 06", reason: "Why I built this — one line.", tags: ["FastAPI", "AWS"] },
 ];
+
 
 export type Testimonial = { quote: string; name: string; role: string };
 
