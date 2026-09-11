@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import chatbotPreview from "@/assets/ai-chatbot.gif.asset.json";
 import habitPreview from "@/assets/habit-tracker.gif.asset.json";
 import voicePreview from "@/assets/voice-translator.gif.asset.json";
+import workoutPreview from "@/assets/workout-generator.gif.asset.json";
 import { Button } from "@/components/ui/button";
 import { PillRow, Reveal, Section } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
