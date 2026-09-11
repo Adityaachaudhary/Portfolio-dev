@@ -216,11 +216,21 @@
   }
 
   .side-projects-deck .swiper-button-prev {
-    left: -4rem;
+    left: -6rem;
   }
 
   .side-projects-deck .swiper-button-next {
-    right: -4rem;
+    right: -6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .side-projects-deck .swiper-button-prev {
+    left: -7.5rem;
+  }
+
+  .side-projects-deck .swiper-button-next {
+    right: -7.5rem;
   }
 }
 
