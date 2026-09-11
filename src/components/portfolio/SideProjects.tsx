@@ -76,11 +76,14 @@ export function SideProjects() {
             loop
             grabCursor
             navigation
+            speed={650}
+            threshold={5}
+            resistanceRatio={0.65}
             cardsEffect={{
-              perSlideOffset: 10,
-              perSlideRotate: 2,
+              perSlideOffset: 14,
+              perSlideRotate: 5,
               rotate: true,
-              slideShadows: false,
+              slideShadows: true,
             }}
           >
             {loopedProjects.map((project, index) => (
