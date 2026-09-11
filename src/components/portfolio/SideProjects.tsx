@@ -18,6 +18,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
 
   return (
     <article className="flex h-full min-h-80 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-lift sm:min-h-96">
+      {/* macOS window chrome — only the project name sits on the placeholder */}
       <div className="flex h-12 shrink-0 items-center gap-2 border-b border-border bg-surface-muted px-4">
         <span aria-hidden className="h-3 w-3 rounded-full bg-[#FF5F57]" />
         <span aria-hidden className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
@@ -26,31 +27,27 @@ export function SideProjectCard({ project }: { project: SideProject }) {
           {project.title}
         </span>
       </div>
-      <div className="glow-indigo relative flex flex-1 flex-col overflow-hidden p-6 sm:p-8">
+      {/* GIF placeholder — clean image area, full visibility */}
+      <div className="glow-indigo relative h-44 w-full shrink-0 overflow-hidden sm:h-52">
         {backgroundUrl ? (
-          <>
-            <img
-              src={backgroundUrl}
-              alt={project.backgroundAlt ?? ""}
-              loading="lazy"
-              decoding="async"
-              aria-hidden
-              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
-            />
-            <span aria-hidden className="pointer-events-none absolute inset-0 bg-surface/70" />
-          </>
+          <img
+            src={backgroundUrl}
+            alt={project.backgroundAlt ?? ""}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover object-center"
+          />
         ) : null}
-        <div className="relative flex flex-1 flex-col">
-        <p className="font-mono text-[11px] uppercase text-primary">Side project</p>
-        <h3 className="mt-4 text-2xl font-bold sm:text-3xl">{project.title}</h3>
-        <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+      </div>
+      {/* Info container under the placeholder */}
+      <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
+        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
           {project.reason}
         </p>
-        <div className="mt-6">
+        <div>
           <PillRow tags={project.tags} />
         </div>
-        <div className="mt-auto flex items-center gap-3 pt-8">
-
+        <div className="mt-auto flex items-center gap-3 pt-2">
           {project.github ? (
             <Button asChild variant="outline" size="sm">
               <a href={project.github} target="_blank" rel="noreferrer">
@@ -74,10 +71,8 @@ export function SideProjectCard({ project }: { project: SideProject }) {
             </Button>
           )}
         </div>
-        </div>
       </div>
     </article>
-
   );
 }
 
