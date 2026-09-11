@@ -96,7 +96,7 @@ export function Tag({ children, tone = "default" }: { children: ReactNode; tone?
   );
 }
 
-export function TagRow({ tags, tone }: { tags: string[]; tone?: "default" | "accent" }) {
+export function TagRow({ tags, tone = "default" }: { tags: string[]; tone?: "default" | "accent" }) {
   return (
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => (
