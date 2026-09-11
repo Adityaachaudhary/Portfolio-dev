@@ -9,6 +9,7 @@ import habitPreview from "@/assets/habit-tracker.gif.asset.json";
 import voicePreview from "@/assets/voice-translator.gif.asset.json";
 import workoutPreview from "@/assets/workout-generator.gif.asset.json";
 import workdayPreview from "@/assets/workday-autofill.gif.asset.json";
+import surveyPreview from "@/assets/survey-builder.gif";
 import { Button } from "@/components/ui/button";
 import { PillRow, Reveal, Section } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
@@ -19,6 +20,7 @@ const backgroundUrls: Record<NonNullable<SideProject["background"]>, string> = {
   voice: voicePreview.url,
   workout: workoutPreview.url,
   workday: workdayPreview.url,
+  survey: surveyPreview,
 };
 
 export function SideProjectCard({ project }: { project: SideProject }) {
