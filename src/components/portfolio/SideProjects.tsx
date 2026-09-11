@@ -4,11 +4,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/navigation";
+import habitPreview from "@/assets/habit-tracker.gif.asset.json";
 import { Button } from "@/components/ui/button";
 import { PillRow, Reveal, Section } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
 
+const backgroundUrls: Record<NonNullable<SideProject["background"]>, string> = {
+  habit: habitPreview.url,
+};
+
 export function SideProjectCard({ project }: { project: SideProject }) {
+  const backgroundUrl = project.background ? backgroundUrls[project.background] : undefined;
+
   return (
     <article className="flex h-full min-h-80 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-lift sm:min-h-96">
       <div className="flex h-12 shrink-0 items-center gap-2 border-b border-border bg-surface-muted px-4">
@@ -19,7 +26,21 @@ export function SideProjectCard({ project }: { project: SideProject }) {
           {project.title}
         </span>
       </div>
-      <div className="glow-indigo flex flex-1 flex-col p-6 sm:p-8">
+      <div className="glow-indigo relative flex flex-1 flex-col overflow-hidden p-6 sm:p-8">
+        {backgroundUrl ? (
+          <>
+            <img
+              src={backgroundUrl}
+              alt={project.backgroundAlt ?? ""}
+              loading="lazy"
+              decoding="async"
+              aria-hidden
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
+            />
+            <span aria-hidden className="pointer-events-none absolute inset-0 bg-surface/70" />
+          </>
+        ) : null}
+        <div className="relative flex flex-1 flex-col">
         <p className="font-mono text-[11px] uppercase text-primary">Side project</p>
         <h3 className="mt-4 text-2xl font-bold sm:text-3xl">{project.title}</h3>
         <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -29,6 +50,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
           <PillRow tags={project.tags} />
         </div>
         <div className="mt-auto flex items-center gap-3 pt-8">
+
           {project.github ? (
             <Button asChild variant="outline" size="sm">
               <a href={project.github} target="_blank" rel="noreferrer">
