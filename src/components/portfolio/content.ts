@@ -80,7 +80,7 @@ export type SideProject = {
   github?: string;
   demo?: string;
   /** Optional animated background rendered behind the card content. */
-  background?: "habit" | "chatbot" | "voice" | "workout";
+  background?: "habit" | "chatbot" | "voice" | "workout" | "workday";
   backgroundAlt?: string;
 };
 
@@ -113,7 +113,13 @@ export const sideProjects: SideProject[] = [
     background: "workout",
     backgroundAlt: "Animated workout generator selecting body part and strategy to reveal an exercise list",
   },
-  { title: "Side Project 05", reason: "Why I built this — one line.", tags: ["TypeScript", "API"] },
+  {
+    title: "Workday Autofill Extension",
+    reason: "Why I built this — one line.",
+    tags: ["Browser Extension", "JavaScript"],
+    background: "workday",
+    backgroundAlt: "Animated browser extension parsing a resume and autofilling a Workday job application form",
+  },
   { title: "Side Project 06", reason: "Why I built this — one line.", tags: ["FastAPI", "AWS"] },
 ];
 
