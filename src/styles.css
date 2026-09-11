@@ -235,13 +235,19 @@
      Using Swiper's own variable so it beats the equal-specificity
      `.swiper-horizontal .swiper-button-prev` rule from swiper/css. */
   .side-projects-deck {
-    --swiper-navigation-sides-offset: -6rem;
+    --swiper-navigation-sides-offset: -9rem;
   }
 }
 
 @media (min-width: 1280px) {
   .side-projects-deck {
-    --swiper-navigation-sides-offset: -7.5rem;
+    --swiper-navigation-sides-offset: -11rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .side-projects-deck {
+    --swiper-navigation-sides-offset: -13rem;
   }
 }
 
