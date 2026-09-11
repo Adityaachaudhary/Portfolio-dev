@@ -74,8 +74,10 @@ export function SideProjectCard({ project }: { project: SideProject }) {
             </Button>
           )}
         </div>
+        </div>
       </div>
     </article>
+
   );
 }
 
