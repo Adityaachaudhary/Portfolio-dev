@@ -1,8 +1,9 @@
-import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { EffectCards, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "swiper/css/navigation";
 import { Button } from "@/components/ui/button";
 import { PillRow, Reveal, Section } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
@@ -72,10 +73,7 @@ export function SideProjects() {
             effect="cards"
             loop
             grabCursor
-            navigation={{
-              prevEl: ".side-projects-prev",
-              nextEl: ".side-projects-next",
-            }}
+            navigation
             cardsEffect={{
               perSlideOffset: 10,
               perSlideRotate: 2,
@@ -89,25 +87,6 @@ export function SideProjects() {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            className="side-projects-prev absolute left-0 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-background shadow-card lg:inline-flex"
-            aria-label="Previous side project"
-          >
-            <ArrowLeft aria-hidden />
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            className="side-projects-next absolute right-0 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-background shadow-card lg:inline-flex"
-            aria-label="Next side project"
-          >
-            <ArrowRight aria-hidden />
-          </Button>
         </div>
       </Reveal>
     </Section>
