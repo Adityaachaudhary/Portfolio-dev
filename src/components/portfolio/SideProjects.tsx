@@ -72,6 +72,7 @@ export function SideProjects() {
             modules={[EffectCards, Navigation]}
             effect="cards"
             loop
+            loopAdditionalSlides={sideProjects.length}
             grabCursor
             navigation
             cardsEffect={{
