@@ -30,7 +30,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
         </span>
       </div>
       {/* GIF placeholder — clean image area, full visibility */}
-      <div className="glow-indigo relative h-44 w-full shrink-0 overflow-hidden sm:h-52">
+      <div className="glow-indigo relative h-64 w-full shrink-0 overflow-hidden sm:h-72">
         {backgroundUrl ? (
           <img
             src={backgroundUrl}
