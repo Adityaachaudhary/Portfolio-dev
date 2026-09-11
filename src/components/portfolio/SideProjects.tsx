@@ -16,6 +16,7 @@ const backgroundUrls: Record<NonNullable<SideProject["background"]>, string> = {
   habit: habitPreview.url,
   chatbot: chatbotPreview.url,
   voice: voicePreview.url,
+  workout: workoutPreview.url,
 };
 
 export function SideProjectCard({ project }: { project: SideProject }) {
