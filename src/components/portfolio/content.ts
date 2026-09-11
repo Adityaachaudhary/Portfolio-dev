@@ -120,7 +120,13 @@ export const sideProjects: SideProject[] = [
     background: "workday",
     backgroundAlt: "Animated browser extension parsing a resume and autofilling a Workday job application form",
   },
-  { title: "Side Project 06", reason: "Why I built this — one line.", tags: ["FastAPI", "AWS"] },
+  {
+    title: "Survey Form Builder",
+    reason: "Why I built this — one line.",
+    tags: ["React", "TypeScript"],
+    background: "survey",
+    backgroundAlt: "Animated form builder adding questions with answer types and switching company theme colors",
+  },
 ];
 
 
