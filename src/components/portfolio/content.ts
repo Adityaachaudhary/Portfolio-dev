@@ -51,6 +51,8 @@ export type ClientProject = {
   title: string;
   summary: string;
   tags: string[];
+  preview: "furniture" | "hostel";
+  previewAlt: string;
   href?: string;
 };
 
@@ -59,11 +61,15 @@ export const clientProjects: ClientProject[] = [
     title: "Client Project Title",
     summary: "Brief description of the problem this project solved and my role in building it.",
     tags: ["React", "Node.js", "PostgreSQL"],
+    preview: "furniture",
+    previewAlt: "Animated 3D furniture configurator with furniture placement tools",
   },
   {
     title: "Client Project Title",
     summary: "Brief description of the problem this project solved and my role in building it.",
     tags: ["Next.js", "FastAPI", "AWS"],
+    preview: "hostel",
+    previewAlt: "Animated hostel management interface for room and student records",
   },
 ];
 

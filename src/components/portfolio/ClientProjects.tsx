@@ -1,6 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
+import furniturePreview from "@/assets/furniture-configurator.gif.asset.json";
+import hostelPreview from "@/assets/hostel-management.gif.asset.json";
 import { PillRow, Reveal, Section } from "./primitives";
 import { clientProjects, type ClientProject } from "./content";
+
+const previewUrls: Record<ClientProject["preview"], string> = {
+  furniture: furniturePreview.url,
+  hostel: hostelPreview.url,
+};
 
 export function ProjectCard({ project }: { project: ClientProject }) {
   return (
@@ -16,10 +23,14 @@ export function ProjectCard({ project }: { project: ClientProject }) {
               {project.title}
             </span>
           </div>
-          <div className="glow-indigo flex flex-1 items-center justify-center p-6">
-            <span className="font-mono text-xs text-muted-foreground/70">
-              [ Image / Screenshot Placeholder ]
-            </span>
+          <div className="glow-indigo relative min-h-0 flex-1 overflow-hidden">
+            <img
+              src={previewUrls[project.preview]}
+              alt={project.previewAlt}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover object-center"
+            />
           </div>
         </div>
       </div>
