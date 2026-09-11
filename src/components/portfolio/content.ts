@@ -51,7 +51,7 @@ export type ClientProject = {
   title: string;
   summary: string;
   tags: string[];
-  preview: string;
+  preview: "furniture" | "hostel";
   previewAlt: string;
   href?: string;
 };
