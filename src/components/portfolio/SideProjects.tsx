@@ -1,40 +1,65 @@
 import { ExternalLink, Github } from "lucide-react";
-import { PillRow, Reveal, Section, Tile } from "./primitives";
+import { EffectCards, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/navigation";
+import { Button } from "@/components/ui/button";
+import { PillRow, Reveal, Section } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
 
 export function SideProjectCard({ project }: { project: SideProject }) {
   return (
-    <Tile interactive className="flex h-full flex-col bg-surface-muted p-6">
-      <h3 className="text-sm font-bold">{project.title}</h3>
-      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{project.reason}</p>
-      <div className="mt-4">
-        <PillRow tags={project.tags} />
+    <article className="flex h-full min-h-80 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-lift sm:min-h-96">
+      <div className="flex h-12 shrink-0 items-center gap-2 border-b border-border bg-surface-muted px-4">
+        <span aria-hidden className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+        <span aria-hidden className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
+        <span aria-hidden className="h-3 w-3 rounded-full bg-[#28C840]" />
+        <span className="ml-2 min-w-0 truncate font-mono text-[11px] text-muted-foreground">
+          {project.title}
+        </span>
       </div>
-      <div className="mt-auto flex items-center gap-3 pt-6">
-        <a
-          href={project.github ?? "#"}
-          target={project.github ? "_blank" : undefined}
-          rel="noreferrer"
-          aria-label={`${project.title} on GitHub`}
-          className="text-muted-foreground transition-colors hover:text-primary"
-        >
-          <Github className="h-4 w-4" aria-hidden />
-        </a>
-        <a
-          href={project.demo ?? "#"}
-          target={project.demo ? "_blank" : undefined}
-          rel="noreferrer"
-          aria-label={`${project.title} live demo`}
-          className="text-muted-foreground transition-colors hover:text-primary"
-        >
-          <ExternalLink className="h-4 w-4" aria-hidden />
-        </a>
+      <div className="glow-indigo flex flex-1 flex-col p-6 sm:p-8">
+        <p className="font-mono text-[11px] uppercase text-primary">Side project</p>
+        <h3 className="mt-4 text-2xl font-bold sm:text-3xl">{project.title}</h3>
+        <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+          {project.reason}
+        </p>
+        <div className="mt-6">
+          <PillRow tags={project.tags} />
+        </div>
+        <div className="mt-auto flex items-center gap-3 pt-8">
+          {project.github ? (
+            <Button asChild variant="outline" size="sm">
+              <a href={project.github} target="_blank" rel="noreferrer">
+                <Github aria-hidden /> GitHub
+              </a>
+            </Button>
+          ) : (
+            <Button variant="outline" size="sm" disabled aria-label={`${project.title} GitHub link unavailable`}>
+              <Github aria-hidden /> GitHub
+            </Button>
+          )}
+          {project.demo ? (
+            <Button asChild variant="ghost" size="sm">
+              <a href={project.demo} target="_blank" rel="noreferrer">
+                <ExternalLink aria-hidden /> Live demo
+              </a>
+            </Button>
+          ) : (
+            <Button variant="ghost" size="sm" disabled aria-label={`${project.title} live demo unavailable`}>
+              <ExternalLink aria-hidden /> Live demo
+            </Button>
+          )}
+        </div>
       </div>
-    </Tile>
+    </article>
   );
 }
 
 export function SideProjects() {
+  const loopedProjects = [...sideProjects, ...sideProjects];
+
   return (
     <Section
       id="side-projects"
@@ -42,13 +67,30 @@ export function SideProjects() {
       title="Side projects."
       description="Small experiments and tools, mostly open source."
     >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {sideProjects.map((project, i) => (
-          <Reveal key={i} delay={i * 50} className="h-full">
-            <SideProjectCard project={project} />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal>
+        <div className="relative mx-auto max-w-3xl px-4 sm:px-10 lg:px-16">
+          <Swiper
+            className="side-projects-deck"
+            modules={[EffectCards, Navigation]}
+            effect="cards"
+            loop
+            grabCursor
+            navigation
+            cardsEffect={{
+              perSlideOffset: 10,
+              perSlideRotate: 2,
+              rotate: true,
+              slideShadows: false,
+            }}
+          >
+            {loopedProjects.map((project, index) => (
+              <SwiperSlide key={`${project.title}-${index}`}>
+                <SideProjectCard project={project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </Reveal>
     </Section>
   );
 }
