@@ -175,6 +175,22 @@
   );
 }
 
+.side-projects-deck {
+  width: 100%;
+  overflow: visible;
+  padding: 0.75rem 0;
+}
+
+.side-projects-deck .swiper-slide {
+  height: auto;
+  border-radius: 0.75rem;
+  background: transparent;
+}
+
+.side-projects-deck .swiper-slide > article {
+  height: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -183,5 +199,9 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .side-projects-deck .swiper-wrapper {
+    transition-duration: 0ms !important;
   }
 }
