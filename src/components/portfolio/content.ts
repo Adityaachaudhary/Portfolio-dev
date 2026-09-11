@@ -106,7 +106,13 @@ export const sideProjects: SideProject[] = [
     background: "voice",
     backgroundAlt: "Animated voice recording being transcribed and translated into multiple languages",
   },
-  { title: "Side Project 04", reason: "Why I built this — one line.", tags: ["Next.js", "Postgres"] },
+  {
+    title: "Workout Generator",
+    reason: "Why I built this — one line.",
+    tags: ["Next.js", "Postgres"],
+    background: "workout",
+    backgroundAlt: "Animated workout generator selecting body part and strategy to reveal an exercise list",
+  },
   { title: "Side Project 05", reason: "Why I built this — one line.", tags: ["TypeScript", "API"] },
   { title: "Side Project 06", reason: "Why I built this — one line.", tags: ["FastAPI", "AWS"] },
 ];
