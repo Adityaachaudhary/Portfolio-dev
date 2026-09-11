@@ -19,7 +19,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
   const backgroundUrl = project.background ? backgroundUrls[project.background] : undefined;
 
   return (
-    <article className="flex h-full min-h-80 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-lift sm:min-h-96">
+    <article className="flex h-full min-h-96 flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-lift sm:min-h-[32rem]">
       {/* macOS window chrome — only the project name sits on the placeholder */}
       <div className="flex h-12 shrink-0 items-center gap-2 border-b border-border bg-surface-muted px-4">
         <span aria-hidden className="h-3 w-3 rounded-full bg-[#FF5F57]" />
@@ -30,7 +30,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
         </span>
       </div>
       {/* GIF placeholder — clean image area, full visibility */}
-      <div className="glow-indigo relative h-44 w-full shrink-0 overflow-hidden sm:h-52">
+      <div className="glow-indigo relative h-64 w-full shrink-0 overflow-hidden sm:h-72">
         {backgroundUrl ? (
           <img
             src={backgroundUrl}
