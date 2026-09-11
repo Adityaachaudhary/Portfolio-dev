@@ -80,7 +80,7 @@ export type SideProject = {
   github?: string;
   demo?: string;
   /** Optional animated background rendered behind the card content. */
-  background?: "habit" | "chatbot" | "voice";
+  background?: "habit" | "chatbot" | "voice" | "workout";
   backgroundAlt?: string;
 };
 
