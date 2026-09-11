@@ -30,7 +30,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
         </span>
       </div>
       {/* GIF placeholder — clean image area, full visibility */}
-      <div className="glow-indigo relative h-64 w-full shrink-0 overflow-hidden sm:h-72">
+      <div className="glow-indigo relative h-80 w-full shrink-0 overflow-hidden sm:h-96">
         {backgroundUrl ? (
           <img
             src={backgroundUrl}
@@ -89,7 +89,7 @@ export function SideProjects() {
       description="Small experiments and tools, mostly open source."
     >
       <Reveal>
-        <div className="relative mx-auto max-w-3xl px-4 sm:px-10 lg:px-16">
+        <div className="relative mx-auto max-w-md px-4 sm:px-10 lg:px-16">
           <Swiper
             className="side-projects-deck"
             modules={[EffectCards, Navigation]}
