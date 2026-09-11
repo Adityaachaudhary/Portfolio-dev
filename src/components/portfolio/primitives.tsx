@@ -25,70 +25,67 @@ export function Reveal({
   );
 }
 
-/** Page section with consistent rhythm and an anchor id for the navbar. */
+/** Page section shell with the editorial rule + heading treatment. */
 export function Section({
   id,
-  label,
+  index,
   title,
   description,
   children,
   className,
 }: {
   id: string;
-  label: string;
+  index: string;
   title: string;
   description?: string;
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <section id={id} className={cn("scroll-mt-24 border-t border-border/70 py-20 sm:py-28", className)}>
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">{label}</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+    <section id={id} className={cn("scroll-mt-28 py-16 sm:py-24", className)}>
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
+        <Reveal>
+          <div className="flex items-center gap-5">
+            <span className="font-mono text-xs font-semibold tracking-[0.3em] text-primary">{index}</span>
+            <h2 className="text-2xl font-bold sm:text-3xl">{title}</h2>
+            <span aria-hidden className="hidden h-px flex-1 bg-border sm:block" />
+          </div>
           {description ? (
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{description}</p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">{description}</p>
           ) : null}
         </Reveal>
-        <div className="mt-10 sm:mt-14">{children}</div>
+        <div className="mt-10 sm:mt-12">{children}</div>
       </div>
     </section>
   );
 }
 
-/** Surface card used across projects, services and testimonials. */
-export function Card({
+/** Bento tile surface. */
+export function Tile({
   children,
   className,
   interactive = false,
+  as: Tag = "div",
 }: {
   children: ReactNode;
   className?: string;
   interactive?: boolean;
+  as?: "div" | "article" | "figure" | "li";
 }) {
   return (
-    <div
-      className={cn(
-        "rounded-xl border border-border bg-card text-card-foreground shadow-[var(--shadow-card)]",
-        interactive && "transition-colors duration-200 hover:border-primary/60",
-        className,
-      )}
-    >
-      {children}
-    </div>
+    <Tag className={cn("tile", interactive && "tile-hover", className)}>{children}</Tag>
   );
 }
 
-/** Monospace tech-stack pill. */
-export function Tag({ children, tone = "default" }: { children: ReactNode; tone?: "default" | "accent" }) {
+/** Tech-stack pill. */
+export function Pill({ children, tone = "default" }: { children: ReactNode; tone?: "default" | "accent" }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-md border px-2 py-1 font-mono text-[11px] leading-none",
+        "inline-flex items-center rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors",
         tone === "accent"
-          ? "border-secondary/40 bg-secondary/10 text-secondary-foreground dark:text-secondary"
-          : "border-border bg-muted text-muted-foreground",
+          ? "border-primary/25 bg-primary/10 text-primary"
+          : "border-border bg-surface-muted text-muted-foreground hover:border-primary/30 hover:text-foreground",
       )}
     >
       {children}
@@ -96,14 +93,32 @@ export function Tag({ children, tone = "default" }: { children: ReactNode; tone?
   );
 }
 
-export function TagRow({ tags, tone = "default" }: { tags: string[]; tone?: "default" | "accent" }) {
+export function PillRow({ tags, tone = "default" }: { tags: string[]; tone?: "default" | "accent" }) {
   return (
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => (
         <li key={tag}>
-          <Tag tone={tone}>{tag}</Tag>
+          <Pill tone={tone}>{tag}</Pill>
         </li>
       ))}
     </ul>
+  );
+}
+
+/** Pulsing availability chip used in the hero and about section. */
+export function AvailabilityBadge({ className }: { className?: string }) {
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary",
+        className,
+      )}
+    >
+      <span className="relative flex h-2 w-2" aria-hidden>
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-70" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary" />
+      </span>
+      Available for work
+    </span>
   );
 }

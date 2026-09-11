@@ -3,6 +3,11 @@
  * Swap placeholder copy here — components read from these arrays.
  */
 
+export const aboutStats = [
+  { label: "Experience", value: "2+ Years" },
+  { label: "Focus", value: "End-to-end builds" },
+];
+
 export type Service = { title: string; description: string };
 
 export const coreServices: Service[] = [

@@ -1,34 +1,37 @@
-import { Reveal } from "./primitives";
+import { ArrowRight } from "lucide-react";
+import { AvailabilityBadge, Reveal } from "./primitives";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-      <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines opacity-40" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-full bg-[radial-gradient(60%_50%_at_50%_0%,color-mix(in_oklab,var(--primary)_18%,transparent),transparent_70%)]"
-      />
-      <div className="relative mx-auto w-full max-w-4xl px-5 text-center sm:px-8">
+    <section id="top" className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
+      <div aria-hidden className="glow-indigo pointer-events-none absolute inset-x-0 top-0 h-[520px] opacity-70" />
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
-            Freelance Full-Stack Developer
-          </p>
-          <h1 className="mt-6 font-mono text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            I build full-stack web apps and dashboards that actually get used.
+          <AvailabilityBadge />
+        </Reveal>
+        <Reveal delay={60}>
+          <h1 className="mt-8 max-w-5xl text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+            I build <span className="text-primary">full-stack</span> web apps and dashboards that actually get
+            used.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-lg">
+        </Reveal>
+        <Reveal delay={120}>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             From database to deployment — I handle the whole stack, not just the frontend.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+        </Reveal>
+        <Reveal delay={180}>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 font-mono text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               View My Work
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-md border border-border bg-card px-5 py-3 font-mono text-sm font-medium text-foreground transition-colors hover:border-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="inline-flex items-center rounded-full border border-border bg-surface px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               Let&apos;s Talk
             </a>

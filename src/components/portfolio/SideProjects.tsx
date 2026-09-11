@@ -1,16 +1,16 @@
 import { ExternalLink, Github } from "lucide-react";
-import { Card, Reveal, Section, TagRow } from "./primitives";
+import { PillRow, Reveal, Section, Tile } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
 
 export function SideProjectCard({ project }: { project: SideProject }) {
   return (
-    <Card interactive className="flex h-full flex-col p-5">
-      <h3 className="font-mono text-sm font-semibold tracking-tight">{project.title}</h3>
+    <Tile interactive className="flex h-full flex-col bg-surface-muted p-6">
+      <h3 className="text-sm font-bold">{project.title}</h3>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{project.reason}</p>
       <div className="mt-4">
-        <TagRow tags={project.tags} />
+        <PillRow tags={project.tags} />
       </div>
-      <div className="mt-auto flex items-center gap-3 pt-5">
+      <div className="mt-auto flex items-center gap-3 pt-6">
         <a
           href={project.github ?? "#"}
           target={project.github ? "_blank" : undefined}
@@ -30,7 +30,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
           <ExternalLink className="h-4 w-4" aria-hidden />
         </a>
       </div>
-    </Card>
+    </Tile>
   );
 }
 
@@ -38,8 +38,8 @@ export function SideProjects() {
   return (
     <Section
       id="side-projects"
-      label="05 / Side Projects"
-      title="Things I build for myself"
+      index="05"
+      title="Side projects."
       description="Small experiments and tools, mostly open source."
     >
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
