@@ -65,11 +65,6 @@ export const clientProjects: ClientProject[] = [
     summary: "Brief description of the problem this project solved and my role in building it.",
     tags: ["Next.js", "FastAPI", "AWS"],
   },
-  {
-    title: "Client Project Title",
-    summary: "Brief description of the problem this project solved and my role in building it.",
-    tags: ["TypeScript", "Supabase", "Stripe"],
-  },
 ];
 
 export type SideProject = {
