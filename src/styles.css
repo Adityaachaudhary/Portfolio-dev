@@ -215,12 +215,17 @@
     display: flex;
   }
 
-  .side-projects-deck .swiper-button-prev {
-    left: -4rem;
+  /* Push the arrows outside the card stack, into the side margins.
+     Using Swiper's own variable so it beats the equal-specificity
+     `.swiper-horizontal .swiper-button-prev` rule from swiper/css. */
+  .side-projects-deck {
+    --swiper-navigation-sides-offset: -6rem;
   }
+}
 
-  .side-projects-deck .swiper-button-next {
-    right: -4rem;
+@media (min-width: 1280px) {
+  .side-projects-deck {
+    --swiper-navigation-sides-offset: -7.5rem;
   }
 }
 
