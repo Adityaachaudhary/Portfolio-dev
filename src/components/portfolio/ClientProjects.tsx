@@ -35,7 +35,7 @@ export function ProjectCard({ project }: { project: ClientProject }) {
         </div>
       </div>
       <h3 className="mt-6 text-xl font-bold">{project.title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{project.summary}</p>
+      <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground sm:text-sm">{project.summary}</p>
       <div className="mt-4">
         <PillRow tags={project.tags} />
       </div>

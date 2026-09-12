@@ -51,7 +51,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
       </div>
       {/* Info container under the placeholder */}
       <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
-        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="text-[13px] leading-relaxed text-muted-foreground sm:text-sm">
           {project.reason}
         </p>
         <div>
