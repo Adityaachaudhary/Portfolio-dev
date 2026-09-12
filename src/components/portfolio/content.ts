@@ -41,10 +41,22 @@ export const additionalServices: Service[] = [
 ];
 
 export const skillGroups: { category: string; items: string[] }[] = [
-  { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "TypeScript"] },
-  { category: "Backend", items: ["Node.js", "Express", "FastAPI"] },
-  { category: "Database", items: ["PostgreSQL", "MongoDB", "Firebase", "Supabase"] },
-  { category: "Tools / DevOps", items: ["Git", "Docker", "AWS"] },
+  {
+    category: "Frontend",
+    items: ["JavaScript", "TypeScript", "HTML", "CSS", "React", "Next.js", "Tailwind CSS", "shadcn UI", "Redux Toolkit", "TanStack Query", "Bootstrap", "Three.js"],
+  },
+  {
+    category: "Backend",
+    items: ["Java", "Python", "C", "Node.js", "Express", "Spring Boot", "FastAPI", "Hono", "LangChain", "LangGraph"],
+  },
+  {
+    category: "Database",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Firebase", "Supabase", "Neo4j", "ChromaDB"],
+  },
+  {
+    category: "Tools / DevOps",
+    items: ["Git", "GitHub", "Docker", "AWS", "Google Cloud Platform", "Cloudflare", "ERPNext", "Visual Studio Code", "Cursor", "Postman", "Figma"],
+  },
 ];
 
 export type ClientProject = {
