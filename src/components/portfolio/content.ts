@@ -86,9 +86,11 @@ export type SideProject = {
 
 export const sideProjects: SideProject[] = [
   {
-    title: "Habit Tracker",
-    reason: "Why I built this — one line.",
-    tags: ["React", "Vite"],
+    title: "Habitly",
+    reason: "I built this to track my personal habits and stay consistent day to day. A simple grid of streaks keeps me honest about the habits I care about.",
+    tags: ["React", "TypeScript", "Supabase", "Node.js"],
+    github: "https://github.com/Adityaachaudhary/Habitly",
+    demo: "https://habitly-ashen.vercel.app/",
     background: "habit",
     backgroundAlt: "Animated habit tracking grid filling in day by day",
   },
