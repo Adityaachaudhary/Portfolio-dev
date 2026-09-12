@@ -95,9 +95,10 @@ export const sideProjects: SideProject[] = [
     backgroundAlt: "Animated habit tracking grid filling in day by day",
   },
   {
-    title: "AI Doc Chatbot",
-    reason: "Why I built this — one line.",
-    tags: ["Python", "Local LLM"],
+    title: "AI Toolkit",
+    reason: "I built this to experiment with RAG and local LLMs in a practical chatbot. Upload a PDF or Excel file and ask questions — it summarizes, answers, and pulls insights straight from the document.",
+    tags: ["Python", "FastAPI", "LLM", "RAG", "React"],
+    github: "https://github.com/Adityaachaudhary/RAG-LocalLLM",
     background: "chatbot",
     backgroundAlt: "Animated chatbot summarizing uploaded PDF and Excel files",
   },
