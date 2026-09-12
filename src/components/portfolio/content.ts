@@ -162,8 +162,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const contactLinks = {
-  email: "hello@example.com",
-  github: "https://github.com/",
+  email: "adityaprakash.280102@gmail.com",
+  github: "https://github.com/Adityaachaudhary",
   linkedin: "https://linkedin.com/",
 };
 
