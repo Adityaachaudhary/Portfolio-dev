@@ -12,7 +12,7 @@ const previewUrls: Record<ClientProject["preview"], string> = {
 export function ProjectCard({ project }: { project: ClientProject }) {
   return (
     <article className="group">
-      <div className="tile tile-hover aspect-[3/4] overflow-hidden p-0">
+      <div className="tile tile-hover aspect-[9/8] overflow-hidden p-0">
         <div className="flex h-full w-full flex-col">
           {/* macOS window chrome */}
           <div className="flex items-center gap-2 border-b border-border bg-surface-muted px-4 py-3">
