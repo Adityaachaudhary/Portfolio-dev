@@ -6,7 +6,7 @@ import { Services } from "@/components/portfolio/Services";
 import { Skills } from "@/components/portfolio/Skills";
 import { ClientProjects } from "@/components/portfolio/ClientProjects";
 import { SideProjects } from "@/components/portfolio/SideProjects";
-import { Testimonials } from "@/components/portfolio/Testimonials";
+
 import { Contact } from "@/components/portfolio/Contact";
 
 const title = "Freelance Full-Stack Developer — Web Apps, Dashboards & APIs";
@@ -38,7 +38,7 @@ function Index() {
         <Skills />
         <ClientProjects />
         <SideProjects />
-        <Testimonials />
+        
         <Contact />
       </main>
       <footer className="border-t border-border/70 py-8">
