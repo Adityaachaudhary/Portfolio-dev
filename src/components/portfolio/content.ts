@@ -121,9 +121,10 @@ export const sideProjects: SideProject[] = [
     backgroundAlt: "Animated workout generator selecting body part and strategy to reveal an exercise list",
   },
   {
-    title: "Workday Autofill Extension",
-    reason: "Why I built this — one line.",
-    tags: ["Browser Extension", "JavaScript"],
+    title: "Workday Automation extension",
+    reason: "I built this because Workday applications are too long to fill out manually. It extracts details from a resume, auto-fills the required fields, and submits after the user confirms — saving real time on every application.",
+    tags: ["React", "TypeScript", "Groq API key", "Manifest v3"],
+    github: "https://github.com/Adityaachaudhary/workday-automation",
     background: "workday",
     backgroundAlt: "Animated browser extension parsing a resume and autofilling a Workday job application form",
   },
