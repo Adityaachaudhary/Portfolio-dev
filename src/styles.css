@@ -171,6 +171,12 @@
   background-color: color-mix(in oklab, var(--primary) 8%, var(--surface));
 }
 
+/* No element may ever push the page wider than the viewport. */
+html,
+body {
+  overflow-x: clip;
+}
+
 .side-projects-deck {
   width: 100%;
   overflow: visible;
