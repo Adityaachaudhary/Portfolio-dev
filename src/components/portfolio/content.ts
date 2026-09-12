@@ -58,18 +58,22 @@ export type ClientProject = {
 
 export const clientProjects: ClientProject[] = [
   {
-    title: "Client Project Title",
-    summary: "Brief description of the problem this project solved and my role in building it.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    title: "Config Cloud",
+    summary:
+      "A platform bridging the gap between interior designers and their customers, letting buyers visualize and customize furniture in 3D before purchase.",
+    tags: ["React", "Node.js", "Neo4j", "Three.js", "WebGL", "ShapeDiver", "3D Rendering", "AWS"],
     preview: "furniture",
     previewAlt: "Animated 3D furniture configurator with furniture placement tools",
+    href: "https://configcloud.ai/website/",
   },
   {
-    title: "Client Project Title",
-    summary: "Brief description of the problem this project solved and my role in building it.",
-    tags: ["Next.js", "FastAPI", "AWS"],
+    title: "Livinnza",
+    summary:
+      "A hostel management system for a Bangalore-based university, streamlining room allocation, student records, and operations.",
+    tags: ["Next.js", "ERPNext", "TypeScript", "Performance Optimization", "Google Maps"],
     preview: "hostel",
     previewAlt: "Animated hostel management interface for room and student records",
+    href: "https://livinnza.com/",
   },
 ];
 
