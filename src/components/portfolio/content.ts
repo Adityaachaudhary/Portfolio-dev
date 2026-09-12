@@ -87,7 +87,7 @@ export type SideProject = {
 export const sideProjects: SideProject[] = [
   {
     title: "Habitly",
-    reason: "I built this to track my personal habits and stay consistent day to day. A simple grid of streaks keeps me honest about the habits I care about.",
+    reason: "Staying consistent with personal habits is hard when progress is invisible. Habitly keeps a simple grid of streaks that shows exactly which habits are holding and which are slipping, so staying on track becomes a daily, visible routine instead of guesswork.",
     tags: ["React", "TypeScript", "Supabase", "Node.js"],
     github: "https://github.com/Adityaachaudhary/Habitly",
     demo: "https://habitly-ashen.vercel.app/",
@@ -96,7 +96,7 @@ export const sideProjects: SideProject[] = [
   },
   {
     title: "AI Toolkit",
-    reason: "I built this to experiment with RAG and local LLMs in a practical chatbot. Upload a PDF or Excel file and ask questions — it summarizes, answers, and pulls insights straight from the document.",
+    reason: "Reading long PDFs and Excel files to find one answer is slow and repetitive. This chatbot takes an uploaded document, summarizes it, and answers questions straight from the content using a local LLM, so the answers surface in seconds instead of a manual search.",
     tags: ["Python", "FastAPI", "LLM", "RAG", "React"],
     github: "https://github.com/Adityaachaudhary/RAG-LocalLLM",
     background: "chatbot",
@@ -104,7 +104,7 @@ export const sideProjects: SideProject[] = [
   },
   {
     title: "FreeScribe",
-    reason: "I built this to transcribe and translate spoken dialogue into any language on the fly. It runs speech recognition in the browser and gives clean, instant translated text you can use right away.",
+    reason: "Transcribing and translating spoken dialogue usually means juggling separate tools and waiting on each step. FreeScribe runs speech recognition right in the browser and outputs clean translated text in any language instantly, so a single recording becomes usable, multilingual text without the back and forth.",
     tags: ["Bootstrap", "OpenAI Whisper", "Web Workers", "JavaScript"],
     github: "https://github.com/Adityaachaudhary/scribeFree",
     demo: "https://scribe-free.vercel.app/",
@@ -113,7 +113,7 @@ export const sideProjects: SideProject[] = [
   },
   {
     title: "Strengthmax",
-    reason: "I built this to take the guesswork out of picking exercises for a session. Pick a body part and training strategy, and it instantly generates a focused set of exercises to perform — no more scrolling through endless lists.",
+    reason: "Choosing which exercises to do in a session often turns into endless scrolling through lists. Strengthmax turns a body part and training strategy into a focused, ready-to-go exercise set instantly, so the workout starts instead of the planning dragging on.",
     tags: ["React", "Vite", "Tailwind CSS", "Problem Solving"],
     github: "https://github.com/Adityaachaudhary/Strength_Max",
     demo: "https://strength-max.vercel.app/",
@@ -122,7 +122,7 @@ export const sideProjects: SideProject[] = [
   },
   {
     title: "Workday Automation extension",
-    reason: "I built this because Workday applications are too long to fill out manually. It extracts details from a resume, auto-fills the required fields, and submits after the user confirms — saving real time on every application.",
+    reason: "Workday job applications are long and repetitive to fill out by hand. This extension reads a resume, auto-fills the required fields, and submits only after the user confirms, so each application takes minutes instead of half an hour of typing the same details over and over.",
     tags: ["React", "TypeScript", "Groq API key", "Manifest v3"],
     github: "https://github.com/Adityaachaudhary/workday-automation",
     background: "workday",
@@ -130,7 +130,7 @@ export const sideProjects: SideProject[] = [
   },
   {
     title: "Survey Builder",
-    reason: "I built this so anyone can spin up branded survey forms fast — add multiple question types with different answer formats, drop in a logo, and pick colors to match their brand. It turns a tedious setup task into a quick, repeatable workflow.",
+    reason: "Creating branded survey forms usually means a generic tool and a lot of manual styling afterward. Survey Builder lets users add multiple question types with different answer formats, drop in a logo, and pick brand colors — so a polished, on-brand survey is ready to share in minutes.",
     tags: ["TypeScript", "React", "Cloudflare Hono", "D1 and KV", "Tailwind CSS", "Resend API"],
     github: "https://github.com/Adityaachaudhary/Survey-Builder",
     demo: "https://survey-builder-web.vercel.app/",
