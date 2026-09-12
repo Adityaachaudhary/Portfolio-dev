@@ -88,7 +88,7 @@ export const sideProjects: SideProject[] = [
   {
     title: "Habitly",
     reason: "Staying consistent with personal habits is hard when progress is invisible. Habitly keeps a simple grid of streaks that shows exactly which habits are holding and which are slipping, so staying on track becomes a daily, visible routine instead of guesswork.",
-    tags: ["React", "TypeScript", "Supabase", "Node.js"],
+    tags: ["React", "TypeScript", "Supabase", "Node.js", "Figma", "Responsive Design", "UI/UX"],
     github: "https://github.com/Adityaachaudhary/Habitly",
     demo: "https://habitly-ashen.vercel.app/",
     background: "habit",
@@ -97,7 +97,7 @@ export const sideProjects: SideProject[] = [
   {
     title: "AI Toolkit",
     reason: "Reading long PDFs and Excel files to find one answer is slow and repetitive. This chatbot takes an uploaded document, summarizes it, and answers questions straight from the content using a local LLM, so the answers surface in seconds instead of a manual search.",
-    tags: ["Python", "FastAPI", "LLM", "RAG", "React"],
+    tags: ["Python", "FastAPI", "LLM", "RAG", "React", "Decoupled Architecture", "Prompting Techniques"],
     github: "https://github.com/Adityaachaudhary/RAG-LocalLLM",
     background: "chatbot",
     backgroundAlt: "Animated chatbot summarizing uploaded PDF and Excel files",
@@ -105,7 +105,7 @@ export const sideProjects: SideProject[] = [
   {
     title: "FreeScribe",
     reason: "Transcribing and translating spoken dialogue usually means juggling separate tools and waiting on each step. FreeScribe runs speech recognition right in the browser and outputs clean translated text in any language instantly, so a single recording becomes usable, multilingual text without the back and forth.",
-    tags: ["Bootstrap", "OpenAI Whisper", "Web Workers", "JavaScript"],
+    tags: ["Bootstrap", "OpenAI Whisper", "Web Workers", "JavaScript", "Responsive Design"],
     github: "https://github.com/Adityaachaudhary/scribeFree",
     demo: "https://scribe-free.vercel.app/",
     background: "voice",
@@ -114,7 +114,7 @@ export const sideProjects: SideProject[] = [
   {
     title: "Strengthmax",
     reason: "Choosing which exercises to do in a session often turns into endless scrolling through lists. Strengthmax turns a body part and training strategy into a focused, ready-to-go exercise set instantly, so the workout starts instead of the planning dragging on.",
-    tags: ["React", "Vite", "Tailwind CSS", "Problem Solving"],
+    tags: ["React", "Vite", "Tailwind CSS", "Problem Solving", "SPA", "UI/UX"],
     github: "https://github.com/Adityaachaudhary/Strength_Max",
     demo: "https://strength-max.vercel.app/",
     background: "workout",
@@ -123,7 +123,7 @@ export const sideProjects: SideProject[] = [
   {
     title: "Workday Automation extension",
     reason: "Workday job applications are long and repetitive to fill out by hand. This extension reads a resume, auto-fills the required fields, and submits only after the user confirms, so each application takes minutes instead of half an hour of typing the same details over and over.",
-    tags: ["React", "TypeScript", "Groq API key", "Manifest v3"],
+    tags: ["React", "TypeScript", "Groq API key", "Manifest v3", "Browser Extension", "PDF Parser", "Prompting Techniques"],
     github: "https://github.com/Adityaachaudhary/workday-automation",
     background: "workday",
     backgroundAlt: "Animated browser extension parsing a resume and autofilling a Workday job application form",
