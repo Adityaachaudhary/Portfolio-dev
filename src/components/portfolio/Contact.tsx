@@ -26,7 +26,7 @@ export function Contact() {
         <Reveal>
           <div>
             <div className="flex items-center gap-5">
-              <span className="font-mono text-xs font-semibold tracking-[0.3em] text-primary">07</span>
+              <span className="font-mono text-xs font-semibold tracking-[0.3em] text-primary">06</span>
               <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-muted-foreground">
                 Contact
               </span>
