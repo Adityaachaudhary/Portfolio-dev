@@ -15,7 +15,7 @@ const palettes: Array<{ id: ThemePalette; name: string; swatches: string }> = [
 ];
 
 export function Navbar() {
-  const { theme, palette, setPalette, toggleTheme, mounted } = useTheme();
+  const { theme, palette, setPalette, setMode, mounted } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -80,7 +80,7 @@ export function Navbar() {
                   <Sun className="h-3.5 w-3.5" aria-hidden />
                   <Switch
                     checked={theme === "dark"}
-                    onCheckedChange={toggleTheme}
+                    onCheckedChange={(checked) => setMode(checked ? "dark" : "light")}
                     aria-label="Use dark mode"
                   />
                   <Moon className="h-3.5 w-3.5" aria-hidden />

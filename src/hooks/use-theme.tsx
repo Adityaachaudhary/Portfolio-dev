@@ -42,17 +42,14 @@ export function useTheme() {
     setMounted(true);
   }, []);
 
-  const toggleTheme = useCallback(() => {
-    setTheme((current) => {
-      const next: ThemeMode = current === "dark" ? "light" : "dark";
-      applyTheme(next, palette);
-      try {
-        sessionStorage.setItem(MODE_STORAGE_KEY, next);
-      } catch {
-        /* ignore */
-      }
-      return next;
-    });
+  const setMode = useCallback((next: ThemeMode) => {
+    setTheme(next);
+    applyTheme(next, palette);
+    try {
+      sessionStorage.setItem(MODE_STORAGE_KEY, next);
+    } catch {
+      /* sessionStorage unavailable */
+    }
   }, [palette]);
 
   const setPalette = useCallback((next: ThemePalette) => {
@@ -65,5 +62,5 @@ export function useTheme() {
     }
   }, [theme]);
 
-  return { theme, palette, setPalette, toggleTheme, mounted };
+  return { theme, palette, setPalette, setMode, mounted };
 }
