@@ -164,8 +164,8 @@ export function Contact() {
  className="fixed inset-0 z-50 grid place-items-center bg-background/60 backdrop-blur-sm"
  onClick={() => setPickerOpen(false)}
  >
- <Tile
- className="mx-4 w-full max-w-sm p-6"
+ <div
+ className="tile mx-4 w-full max-w-sm p-6"
  onClick={(e) => e.stopPropagation()}
  >
  <div className="flex items-center justify-between">
