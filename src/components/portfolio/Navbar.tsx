@@ -22,8 +22,8 @@ export function Navbar() {
         aria-label="Main"
         className={cn(
           "mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-5",
-          "border-white/20 bg-background/60 shadow-[var(--shadow-card)] backdrop-blur-xl backdrop-saturate-150",
-          scrolled && "border-border bg-background/80",
+          "border-white/15 bg-background/20 shadow-[var(--shadow-card)] backdrop-blur-2xl backdrop-saturate-150",
+          scrolled && "border-white/20 bg-background/35",
         )}
       >
         <a href="#top" className="min-w-0 truncate font-display text-sm font-bold tracking-tight">
@@ -48,7 +48,7 @@ export function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-            className="ml-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface text-foreground transition-colors hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            className="ml-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-surface/40 text-foreground backdrop-blur-md transition-colors hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             {mounted && theme === "dark" ? (
               <Sun className="h-4 w-4" aria-hidden />
@@ -62,7 +62,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface text-foreground lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-surface/40 text-foreground backdrop-blur-md lg:hidden"
           >
             {open ? <X className="h-4 w-4" aria-hidden /> : <Menu className="h-4 w-4" aria-hidden />}
           </button>
