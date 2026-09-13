@@ -176,7 +176,7 @@ export const testimonials: Testimonial[] = [
 export const contactLinks = {
   email: "adityaprakash.280102@gmail.com",
   github: "https://github.com/Adityaachaudhary",
-  linkedin: "https://linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/adityachaudhary28/",
 };
 
 export const navSections = [
@@ -184,6 +184,6 @@ export const navSections = [
   { id: "services", label: "Services" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
-  { id: "side-projects", label: "Side Projects" },
+  { id: "side-projects", label: "Personal Projects" },
   { id: "contact", label: "Contact" },
 ];

@@ -41,11 +41,7 @@ function Index() {
         
         <Contact />
       </main>
-      <footer className="border-t border-border/70 py-8">
-        <p className="mx-auto w-full max-w-6xl px-5 font-mono text-xs text-muted-foreground sm:px-8">
-          © {new Date().getFullYear()} — Built and maintained by hand.
-        </p>
-      </footer>
+      <footer className="border-t border-border/70 py-8" aria-hidden="true" />
     </div>
   );
 }
