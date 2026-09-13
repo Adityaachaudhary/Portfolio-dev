@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, X } from "lucide-react";
 import { Reveal, Tile } from "./primitives";
 import { contactLinks } from "./content";
 
