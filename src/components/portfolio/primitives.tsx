@@ -64,7 +64,6 @@ export function Section({
 export function Tile({
  children,
  className,
- interactive = false,
  as: Tag = "div",
 }: {
  children: ReactNode;
@@ -73,7 +72,7 @@ export function Tile({
  as?: "div" | "article" | "figure" | "li";
 }) {
  return (
- <Tag className={cn("tile", interactive && "tile-hover", className)}>{children}</Tag>
+ <Tag className={cn("tile", className)}>{children}</Tag>
  );
 }
 
