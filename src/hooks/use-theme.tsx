@@ -1,42 +1,56 @@
 import { useCallback, useEffect, useState } from "react";
 
-export type Theme = "light" | "dark";
+export type ThemeMode = "light" | "dark";
+export type ThemePalette = "ocean" | "emerald" | "crimson" | "amber";
 
-const STORAGE_KEY = "portfolio-theme";
+const MODE_STORAGE_KEY = "portfolio-theme";
+const PALETTE_STORAGE_KEY = "portfolio-palette";
+const PALETTES: ThemePalette[] = ["ocean", "emerald", "crimson", "amber"];
 
-function applyTheme(theme: Theme) {
+function applyTheme(mode: ThemeMode, palette: ThemePalette) {
   const root = document.documentElement;
-  root.classList.toggle("dark", theme === "dark");
-  root.style.colorScheme = theme;
+  root.classList.toggle("dark", mode === "dark");
+  root.dataset.palette = palette;
+  root.style.colorScheme = mode;
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<ThemeMode>("dark");
+  const [palette, setPaletteState] = useState<ThemePalette>("ocean");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    let initial: Theme = "dark";
+    let initialMode: ThemeMode = "dark";
+    let initialPalette: ThemePalette = "ocean";
     try {
-      const stored = sessionStorage.getItem(STORAGE_KEY);
-      if (stored === "light" || stored === "dark") {
-        initial = stored;
+      const storedMode = sessionStorage.getItem(MODE_STORAGE_KEY);
+      const storedPalette = sessionStorage.getItem(PALETTE_STORAGE_KEY);
+      if (storedMode === "light" || storedMode === "dark") {
+        initialMode = storedMode;
       } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-        initial = "light";
+        initialMode = "light";
+      }
+      if (PALETTES.includes(storedPalette as ThemePalette)) {
+        initialPalette = storedPalette as ThemePalette;
       }
     } catch {
       /* sessionStorage unavailable */
     }
-    setTheme(initial);
-    applyTheme(initial);
+    setTheme(initialMode);
+    setPaletteState(initialPalette);
+    applyTheme(initialMode, initialPalette);
     setMounted(true);
   }, []);
 
   const toggleTheme = useCallback(() => {
     setTheme((current) => {
-      const next: Theme = current === "dark" ? "light" : "dark";
-      applyTheme(next);
+      const next: ThemeMode = current === "dark" ? "light" : "dark";
+      setPaletteState((currentPalette) => {
+        applyTheme(next, currentPalette);
+        return currentPalette;
+      });
       try {
-        sessionStorage.setItem(STORAGE_KEY, next);
+        sessionStorage.setItem(MODE_STORAGE_KEY, next);
       } catch {
         /* ignore */
       }
@@ -44,5 +58,18 @@ export function useTheme() {
     });
   }, []);
 
-  return { theme, toggleTheme, mounted };
+  const setPalette = useCallback((next: ThemePalette) => {
+    setPaletteState(next);
+    setTheme((currentMode) => {
+      applyTheme(currentMode, next);
+      return currentMode;
+    });
+    try {
+      sessionStorage.setItem(PALETTE_STORAGE_KEY, next);
+    } catch {
+      /* sessionStorage unavailable */
+    }
+  }, []);
+
+  return { theme, palette, setPalette, toggleTheme, mounted };
 }

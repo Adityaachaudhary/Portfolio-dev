@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Check, Menu, Moon, Palette, Sun, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTheme } from "@/hooks/use-theme";
+import { type ThemePalette, useTheme } from "@/hooks/use-theme";
+import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Switch } from "@/components/ui/switch";
 import { navSections } from "./content";
 
+const palettes: Array<{ id: ThemePalette; name: string; swatches: string }> = [
+  { id: "ocean", name: "Ocean Blue", swatches: "theme-swatch-ocean" },
+  { id: "emerald", name: "Emerald Mint", swatches: "theme-swatch-emerald" },
+  { id: "crimson", name: "Crimson Rose", swatches: "theme-swatch-crimson" },
+  { id: "amber", name: "Amber Graphite", swatches: "theme-swatch-amber" },
+];
+
 export function Navbar() {
-  const { theme, toggleTheme, mounted } = useTheme();
+  const { theme, palette, setPalette, toggleTheme, mounted } = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -44,28 +54,79 @@ export function Navbar() {
             ))}
           </ul>
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-            className="ml-1 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-surface/40 text-foreground backdrop-blur-md transition-colors hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-          >
-            {mounted && theme === "dark" ? (
-              <Sun className="h-4 w-4" aria-hidden />
-            ) : (
-              <Moon className="h-4 w-4" aria-hidden />
-            )}
-          </button>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                aria-label="Choose color theme"
+                className="ml-1 rounded-full border border-white/15 bg-surface/40 text-foreground backdrop-blur-md hover:border-primary/40 hover:bg-surface/60"
+              >
+                <Palette className="h-4 w-4" aria-hidden />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent
+              align="end"
+              sideOffset={10}
+              className="w-[min(19rem,calc(100vw-2rem))] rounded-2xl border-white/15 bg-background/75 p-3 shadow-[var(--shadow-lift)] backdrop-blur-2xl"
+            >
+              <div className="flex items-center justify-between gap-4 border-b border-border/70 px-1 pb-3">
+                <div>
+                  <p className="font-display text-sm font-semibold">Appearance</p>
+                  <p className="text-xs text-muted-foreground">{theme === "dark" ? "Dark" : "Light"} mode</p>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Sun className="h-3.5 w-3.5" aria-hidden />
+                  <Switch
+                    checked={theme === "dark"}
+                    onCheckedChange={toggleTheme}
+                    aria-label="Use dark mode"
+                  />
+                  <Moon className="h-3.5 w-3.5" aria-hidden />
+                </div>
+              </div>
 
-          <button
+              <div className="mt-2 grid gap-1" role="radiogroup" aria-label="Color palette">
+                {palettes.map((item) => {
+                  const selected = mounted && palette === item.id;
+                  return (
+                    <Button
+                      key={item.id}
+                      type="button"
+                      variant="ghost"
+                      role="radio"
+                      aria-checked={selected}
+                      onClick={() => setPalette(item.id)}
+                      className={cn(
+                        "h-11 w-full justify-start rounded-xl px-2.5 text-sm",
+                        selected ? "bg-primary/12 text-foreground" : "text-muted-foreground",
+                      )}
+                    >
+                      <span className={cn("theme-swatch", item.swatches)} aria-hidden>
+                        <span />
+                        <span />
+                      </span>
+                      <span className="flex-1 text-left">{item.name}</span>
+                      {selected ? <Check className="h-4 w-4 text-primary" aria-hidden /> : null}
+                    </Button>
+                  );
+                })}
+              </div>
+            </PopoverContent>
+          </Popover>
+
+          <Button
             type="button"
+            variant="ghost"
+            size="icon"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-surface/40 text-foreground backdrop-blur-md lg:hidden"
+            className="rounded-full border border-white/15 bg-surface/40 text-foreground backdrop-blur-md hover:bg-surface/60 lg:hidden"
           >
             {open ? <X className="h-4 w-4" aria-hidden /> : <Menu className="h-4 w-4" aria-hidden />}
-          </button>
+          </Button>
         </div>
       </nav>
 
