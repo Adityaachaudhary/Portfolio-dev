@@ -10,7 +10,7 @@ const PALETTES: ThemePalette[] = ["ocean", "emerald", "crimson", "amber"];
 function applyTheme(mode: ThemeMode, palette: ThemePalette) {
   const root = document.documentElement;
   root.classList.toggle("dark", mode === "dark");
-  root.dataset.palette = palette;
+  root.dataset["palette"] = palette;
   root.style.colorScheme = mode;
 }
 
@@ -45,10 +45,7 @@ export function useTheme() {
   const toggleTheme = useCallback(() => {
     setTheme((current) => {
       const next: ThemeMode = current === "dark" ? "light" : "dark";
-      setPaletteState((currentPalette) => {
-        applyTheme(next, currentPalette);
-        return currentPalette;
-      });
+      applyTheme(next, palette);
       try {
         sessionStorage.setItem(MODE_STORAGE_KEY, next);
       } catch {
@@ -56,20 +53,17 @@ export function useTheme() {
       }
       return next;
     });
-  }, []);
+  }, [palette]);
 
   const setPalette = useCallback((next: ThemePalette) => {
     setPaletteState(next);
-    setTheme((currentMode) => {
-      applyTheme(currentMode, next);
-      return currentMode;
-    });
+    applyTheme(theme, next);
     try {
       sessionStorage.setItem(PALETTE_STORAGE_KEY, next);
     } catch {
       /* sessionStorage unavailable */
     }
-  }, []);
+  }, [theme]);
 
   return { theme, palette, setPalette, toggleTheme, mounted };
 }
