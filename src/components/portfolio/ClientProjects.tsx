@@ -1,12 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
-import furniturePreview from "@/assets/furniture-configurator.gif.asset.json";
-import hostelPreview from "@/assets/hostel-management.gif.asset.json";
+import furniturePreview from "@/assets/furniture-configurator.gif";
+import hostelPreview from "@/assets/hostel-management.gif";
 import { PillRow, Reveal, Section } from "./primitives";
 import { clientProjects, type ClientProject } from "./content";
 
 const previewUrls: Record<ClientProject["preview"], string> = {
- furniture: furniturePreview.url,
- hostel: hostelPreview.url,
+ furniture: furniturePreview,
+ hostel: hostelPreview,
 };
 
 export function ProjectCard({ project }: { project: ClientProject }) {
