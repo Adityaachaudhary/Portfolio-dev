@@ -59,7 +59,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
         </div>
         <div className="mt-auto flex items-center gap-3 pt-2">
           {project.github ? (
-            <Button asChild variant="outline" size="sm">
+            <Button asChild variant="outline" size="sm" className="hover:bg-primary/10 hover:text-foreground hover:border-primary/40">
               <a href={project.github} target="_blank" rel="noreferrer">
                 <Github aria-hidden /> GitHub
               </a>
@@ -70,7 +70,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
             </Button>
           )}
           {project.demo ? (
-            <Button asChild variant="ghost" size="sm">
+            <Button asChild variant="ghost" size="sm" className="hover:bg-primary/10 hover:text-foreground">
               <a href={project.demo} target="_blank" rel="noreferrer">
                 <ExternalLink aria-hidden /> Live demo
               </a>

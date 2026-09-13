@@ -138,7 +138,7 @@ export function Navbar() {
  <a
  href={`#${item.id}`}
  onClick={() => setOpen(false)}
- className="block rounded-2xl px-4 py-2.5 text-sm text-muted-foreground transition-colors "
+ className="block rounded-2xl px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-primary/15 hover:text-foreground"
  >
  {item.label}
  </a>
