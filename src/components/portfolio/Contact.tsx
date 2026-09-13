@@ -13,12 +13,16 @@ export function Contact() {
  const [email, setEmail] = useState("");
  const [message, setMessage] = useState("");
 
- function handleSubmit(event: FormEvent<HTMLFormElement>) {
- event.preventDefault();
- const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
- const subject = encodeURIComponent(`Project enquiry from ${name || "your site"}`);
- window.location.href = `mailto:${contactLinks.email}?subject=${subject}&body=${body}`;
- }
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+  const subject = encodeURIComponent(`Project enquiry from ${name || "your site"}`);
+  window.open(
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${contactLinks.email}&su=${subject}&body=${body}`,
+  "_blank",
+  "noopener,noreferrer",
+  );
+  }
 
  return (
  <section id="contact" className="scroll-mt-28 py-16 sm:py-24">
@@ -65,10 +69,12 @@ export function Contact() {
  </a>
  </li>
  <li>
- <a
- href={`mailto:${contactLinks.email}`}
- className="inline-flex items-center gap-3 text-base transition-colors "
- >
+  <a
+  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contactLinks.email}`}
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center gap-3 text-base transition-colors "
+  >
  <span className="grid h-9 w-9 place-items-center rounded-full border border-border bg-surface">
  <Mail className="h-4 w-4" aria-hidden />
  </span>
