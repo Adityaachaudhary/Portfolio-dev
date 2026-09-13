@@ -243,24 +243,15 @@
   }
 }
 
-/* Bento tile: surface + hairline border + hover accent edge. */
+/* Bento tile: stable surface with a hairline border. */
 @utility tile {
   position: relative;
   border-radius: 1.5rem;
   border: 1px solid var(--border);
   background-color: var(--surface);
   box-shadow: var(--shadow-elevation);
-  transition:
-    border-color 250ms ease,
-    transform 250ms ease;
 }
 
-@utility tile-hover {
-  &:hover {
-    border-color: color-mix(in oklab, var(--primary) 45%, transparent);
-    transform: translateY(-2px);
-  }
-}
 
 @utility glow-indigo {
   background-color: color-mix(in oklab, var(--primary) 8%, var(--surface));
