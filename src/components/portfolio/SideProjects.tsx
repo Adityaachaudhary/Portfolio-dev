@@ -75,11 +75,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
                 <ExternalLink aria-hidden /> Live demo
               </a>
             </Button>
-          ) : (
-            <Button variant="ghost" size="sm" disabled aria-label={`${project.title} live demo unavailable`}>
-              <ExternalLink aria-hidden /> Live demo
-            </Button>
-          )}
+          ) : null}
         </div>
       </div>
     </article>
