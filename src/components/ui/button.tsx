@@ -14,7 +14,7 @@ const buttonVariants = cva(
  outline:
  "border border-input bg-background shadow-sm ",
  secondary: "bg-secondary text-secondary-foreground shadow-sm ",
- ghost: ",
+  ghost: "",
  link: "text-primary underline-offset-4 ",
  },
  size: {
