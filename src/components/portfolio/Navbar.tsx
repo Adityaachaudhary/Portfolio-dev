@@ -69,7 +69,7 @@ export function Navbar() {
             <PopoverContent
               align="end"
               sideOffset={10}
-              className="w-[min(19rem,calc(100vw-2rem))] rounded-2xl border-white/15 bg-background/75 p-3 shadow-[var(--shadow-lift)] backdrop-blur-2xl"
+              className="w-[min(19rem,calc(100vw-2rem))] rounded-2xl border-white/15 bg-popover/95 p-3 shadow-[var(--shadow-lift)] backdrop-blur-2xl"
             >
               <div className="flex items-center justify-between gap-4 border-b border-border/70 px-1 pb-3">
                 <div>
