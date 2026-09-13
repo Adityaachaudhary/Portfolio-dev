@@ -155,6 +155,65 @@ export function Contact() {
  </Tile>
  </Reveal>
  </div>
+
+ {pickerOpen && (
+ <div
+ role="dialog"
+ aria-modal="true"
+ aria-label="Choose a mail service"
+ className="fixed inset-0 z-50 grid place-items-center bg-background/60 backdrop-blur-sm"
+ onClick={() => setPickerOpen(false)}
+ >
+ <Tile
+ className="mx-4 w-full max-w-sm p-6"
+ onClick={(e) => e.stopPropagation()}
+ >
+ <div className="flex items-center justify-between">
+ <h3 className="font-display text-base font-bold">Send via</h3>
+ <button
+ type="button"
+ aria-label="Close"
+ onClick={() => setPickerOpen(false)}
+ className="grid h-8 w-8 place-items-center rounded-full border border-border bg-surface"
+ >
+ <X className="h-4 w-4" aria-hidden />
+ </button>
+ </div>
+ <p className="mt-2 text-sm text-muted-foreground">
+ Choose how you&apos;d like to send your message.
+ </p>
+ <div className="mt-5 grid gap-3">
+ <button
+ type="button"
+ onClick={() => openMail("gmail")}
+ className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-left text-sm font-semibold"
+ >
+ <Mail className="h-4 w-4 text-primary" aria-hidden />
+ Gmail
+ <span className="ml-auto text-xs font-normal text-muted-foreground">opens in browser</span>
+ </button>
+ <button
+ type="button"
+ onClick={() => openMail("outlook")}
+ className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-left text-sm font-semibold"
+ >
+ <Mail className="h-4 w-4 text-primary" aria-hidden />
+ Outlook
+ <span className="ml-auto text-xs font-normal text-muted-foreground">opens in browser</span>
+ </button>
+ <button
+ type="button"
+ onClick={() => openMail("default")}
+ className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-left text-sm font-semibold"
+ >
+ <Mail className="h-4 w-4 text-primary" aria-hidden />
+ Default mail app
+ <span className="ml-auto text-xs font-normal text-muted-foreground">uses your device</span>
+ </button>
+ </div>
+ </Tile>
+ </div>
+ )}
  </section>
  );
 }
