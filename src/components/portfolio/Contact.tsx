@@ -211,7 +211,7 @@ export function Contact() {
  <span className="ml-auto text-xs font-normal text-muted-foreground">uses your device</span>
  </button>
  </div>
- </Tile>
+ </div>
  </div>
  )}
  </section>
