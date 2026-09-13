@@ -9,7 +9,7 @@ import { SideProjects } from "@/components/portfolio/SideProjects";
 
 import { Contact } from "@/components/portfolio/Contact";
 
-const title = "Freelance Full-Stack Developer — Web Apps, Dashboards & APIs";
+const title = "Portfolio-Aditya";
 const description =
   "Freelance full-stack developer building web apps, dashboards and APIs end-to-end — from database design to deployment. Available for new projects.";
 
@@ -38,7 +38,7 @@ function Index() {
         <Skills />
         <ClientProjects />
         <SideProjects />
-        
+
         <Contact />
       </main>
       <footer className="border-t border-border/70 py-8" aria-hidden="true" />
