@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, X } from "lucide-react";
 import { Reveal, Tile } from "./primitives";
 import { contactLinks } from "./content";
 
@@ -12,17 +12,33 @@ export function Contact() {
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [message, setMessage] = useState("");
+ const [pickerOpen, setPickerOpen] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-  const subject = encodeURIComponent(`Project enquiry from ${name || "your site"}`);
-  window.open(
-  `https://mail.google.com/mail/?view=cm&fs=1&to=${contactLinks.email}&su=${subject}&body=${body}`,
-  "_blank",
-  "noopener,noreferrer",
-  );
-  }
+ function handleSubmit(event: FormEvent<HTMLFormElement>) {
+ event.preventDefault();
+ setPickerOpen(true);
+ }
+
+ function openMail(service: "gmail" | "outlook" | "default") {
+ const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+ const subject = encodeURIComponent(`Project enquiry from ${name || "your site"}`);
+ setPickerOpen(false);
+ if (service === "gmail") {
+ window.open(
+ `https://mail.google.com/mail/?view=cm&fs=1&to=${contactLinks.email}&su=${subject}&body=${body}`,
+ "_blank",
+ "noopener,noreferrer",
+ );
+ } else if (service === "outlook") {
+ window.open(
+ `https://outlook.live.com/mail/0/deeplink/compose?to=${contactLinks.email}&subject=${subject}&body=${body}`,
+ "_blank",
+ "noopener,noreferrer",
+ );
+ } else {
+ window.location.href = `mailto:${contactLinks.email}?subject=${subject}&body=${body}`;
+ }
+ }
 
  return (
  <section id="contact" className="scroll-mt-28 py-16 sm:py-24">
@@ -139,6 +155,65 @@ export function Contact() {
  </Tile>
  </Reveal>
  </div>
+
+ {pickerOpen && (
+ <div
+ role="dialog"
+ aria-modal="true"
+ aria-label="Choose a mail service"
+ className="fixed inset-0 z-50 grid place-items-center bg-background/60 backdrop-blur-sm"
+ onClick={() => setPickerOpen(false)}
+ >
+ <div
+ className="tile mx-4 w-full max-w-sm p-6"
+ onClick={(e) => e.stopPropagation()}
+ >
+ <div className="flex items-center justify-between">
+ <h3 className="font-display text-base font-bold">Send via</h3>
+ <button
+ type="button"
+ aria-label="Close"
+ onClick={() => setPickerOpen(false)}
+ className="grid h-8 w-8 place-items-center rounded-full border border-border bg-surface"
+ >
+ <X className="h-4 w-4" aria-hidden />
+ </button>
+ </div>
+ <p className="mt-2 text-sm text-muted-foreground">
+ Choose how you&apos;d like to send your message.
+ </p>
+ <div className="mt-5 grid gap-3">
+ <button
+ type="button"
+ onClick={() => openMail("gmail")}
+ className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-left text-sm font-semibold"
+ >
+ <Mail className="h-4 w-4 text-primary" aria-hidden />
+ Gmail
+ <span className="ml-auto text-xs font-normal text-muted-foreground">opens in browser</span>
+ </button>
+ <button
+ type="button"
+ onClick={() => openMail("outlook")}
+ className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-left text-sm font-semibold"
+ >
+ <Mail className="h-4 w-4 text-primary" aria-hidden />
+ Outlook
+ <span className="ml-auto text-xs font-normal text-muted-foreground">opens in browser</span>
+ </button>
+ <button
+ type="button"
+ onClick={() => openMail("default")}
+ className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-left text-sm font-semibold"
+ >
+ <Mail className="h-4 w-4 text-primary" aria-hidden />
+ Default mail app
+ <span className="ml-auto text-xs font-normal text-muted-foreground">uses your device</span>
+ </button>
+ </div>
+ </div>
+ </div>
+ )}
  </section>
  );
 }
