@@ -46,7 +46,7 @@ export function Navbar() {
  <li key={item.id}>
  <a
  href={`#${item.id}`}
- className="rounded-full px-3.5 py-2 text-xs font-medium text-muted-foreground transition-colors "
+ className="rounded-full px-3.5 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-primary/15 hover:text-foreground"
  >
  {item.label}
  </a>
