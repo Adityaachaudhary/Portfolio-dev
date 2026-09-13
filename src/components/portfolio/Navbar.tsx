@@ -22,8 +22,8 @@ export function Navbar() {
         aria-label="Main"
         className={cn(
           "mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-5",
-          "border-white/15 bg-background/30 shadow-[var(--shadow-card)] backdrop-blur-2xl backdrop-saturate-150",
-          scrolled && "border-white/20 bg-background/45",
+          "border-white/15 bg-background/20 shadow-[var(--shadow-card)] backdrop-blur-2xl backdrop-saturate-150",
+          scrolled && "border-white/20 bg-background/35",
         )}
       >
         <a href="#top" className="min-w-0 truncate font-display text-sm font-bold tracking-tight">
