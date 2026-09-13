@@ -12,17 +12,33 @@ export function Contact() {
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [message, setMessage] = useState("");
+ const [pickerOpen, setPickerOpen] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-  const subject = encodeURIComponent(`Project enquiry from ${name || "your site"}`);
-  window.open(
-  `https://mail.google.com/mail/?view=cm&fs=1&to=${contactLinks.email}&su=${subject}&body=${body}`,
-  "_blank",
-  "noopener,noreferrer",
-  );
-  }
+ function handleSubmit(event: FormEvent<HTMLFormElement>) {
+ event.preventDefault();
+ setPickerOpen(true);
+ }
+
+ function openMail(service: "gmail" | "outlook" | "default") {
+ const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+ const subject = encodeURIComponent(`Project enquiry from ${name || "your site"}`);
+ setPickerOpen(false);
+ if (service === "gmail") {
+ window.open(
+ `https://mail.google.com/mail/?view=cm&fs=1&to=${contactLinks.email}&su=${subject}&body=${body}`,
+ "_blank",
+ "noopener,noreferrer",
+ );
+ } else if (service === "outlook") {
+ window.open(
+ `https://outlook.live.com/mail/0/deeplink/compose?to=${contactLinks.email}&subject=${subject}&body=${body}`,
+ "_blank",
+ "noopener,noreferrer",
+ );
+ } else {
+ window.location.href = `mailto:${contactLinks.email}?subject=${subject}&body=${body}`;
+ }
+ }
 
  return (
  <section id="contact" className="scroll-mt-28 py-16 sm:py-24">
