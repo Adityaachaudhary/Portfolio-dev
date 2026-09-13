@@ -93,7 +93,7 @@ export function SideProjects() {
     <Section
       id="side-projects"
       index="05"
-      title="Side projects."
+      title="Personal projects."
       description="Small experiments and tools, mostly open source."
     >
       <Reveal>
