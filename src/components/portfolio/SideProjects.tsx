@@ -4,22 +4,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/navigation";
-import chatbotPreview from "@/assets/ai-chatbot.gif.asset.json";
-import habitPreview from "@/assets/habit-tracker.gif.asset.json";
-import voicePreview from "@/assets/voice-translator.gif.asset.json";
-import workoutPreview from "@/assets/workout-generator.gif.asset.json";
-import workdayPreview from "@/assets/workday-autofill.gif.asset.json";
+import chatbotPreview from "@/assets/ai-chatbot.gif";
+import habitPreview from "@/assets/habit-tracker.gif";
+import voicePreview from "@/assets/voice-translator.gif";
+import workoutPreview from "@/assets/workout-generator.gif";
+import workdayPreview from "@/assets/workday-autofill.gif";
 import surveyPreview from "@/assets/survey-builder.gif";
 import { Button } from "@/components/ui/button";
 import { PillRow, Reveal, Section } from "./primitives";
 import { sideProjects, type SideProject } from "./content";
 
 const backgroundUrls: Record<NonNullable<SideProject["background"]>, string> = {
-  habit: habitPreview.url,
-  chatbot: chatbotPreview.url,
-  voice: voicePreview.url,
-  workout: workoutPreview.url,
-  workday: workdayPreview.url,
+  habit: habitPreview,
+  chatbot: chatbotPreview,
+  voice: voicePreview,
+  workout: workoutPreview,
+  workday: workdayPreview,
   survey: surveyPreview,
 };
 
