@@ -51,19 +51,19 @@ export const additionalServices: Service[] = [
 export const skillGroups: { category: string; items: string[] }[] = [
   {
     category: "Frontend",
-    items: ["JavaScript", "TypeScript", "HTML", "CSS", "React", "Next.js", "Vite", "Tailwind CSS", "shadcn UI", "Radix UI", "Redux Toolkit", "TanStack Query", "React Hook Form", "Zod", "Framer Motion", "Bootstrap", "Three.js", "Responsive Design", "UI/UX"],
+    items: ["JavaScript", "TypeScript", "HTML", "CSS", "React", "Next.js", "Vite", "Tailwind CSS", "shadcn UI", "Radix UI", "Redux Toolkit", "TanStack Query", "React Hook Form", "Framer Motion", "Bootstrap", "Three.js", "Responsive Design", "UI/UX"],
   },
   {
     category: "Backend",
-    items: ["Java", "Python", "C", "Node.js", "Express", "Spring Boot", "FastAPI", "Hono", "REST APIs", "GraphQL", "WebSockets", "JWT", "OAuth", "Prisma", "Web Workers", "LangChain", "LangGraph", "RAG", "Prompt Engineering"],
+    items: ["Java", "Python", "C", "Node.js", "Express", "Spring Boot", "FastAPI", "Hono", "REST APIs", "GraphQL", "WebSockets", "JWT", "OAuth", "Web Workers", "LangChain", "LangGraph", "RAG", "Prompt Engineering"],
   },
   {
     category: "Database",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Firebase", "Supabase", "Neo4j", "ChromaDB", "Redis", "Cloudflare D1", "Drizzle ORM"],
+    items: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Firebase", "Supabase", "Neo4j", "ChromaDB", "Redis", "Cloudflare D1"],
   },
   {
     category: "Tools / DevOps",
-    items: ["Git", "GitHub", "Docker", "AWS", "Google Cloud Platform", "Cloudflare", "Cloudflare KV", "Vercel", "GitHub Actions", "CI/CD", "Linux", "ERPNext", "Visual Studio Code", "Cursor", "Postman", "Figma", "Sentry", "Resend API"],
+    items: ["Git", "GitHub", "Docker", "AWS", "Google Cloud Platform", "Cloudflare", "Cloudflare KV", "Vercel", "GitHub Actions", "CI/CD", "ERPNext", "Visual Studio Code", "Cursor", "Postman", "Figma", "Resend API"],
   },
 ];
 
