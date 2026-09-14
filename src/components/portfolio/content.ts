@@ -46,6 +46,7 @@ export const additionalServices: Service[] = [
   { title: "Payment Integration", description: "Stripe, Razorpay, PayPal gateway setup." },
   { title: "Deployment & DevOps", description: "AWS/Azure deployment, Docker, CI/CD pipelines." },
   { title: "Maintenance & Support", description: "Ongoing updates, bug fixes, and monitoring after launch." },
+  { title: "Data Analytics Dashboards", description: "Turn raw data into clear, actionable reporting and analytics views." },
 ];
 
 export const skillGroups: { category: string; items: string[] }[] = [
