@@ -31,6 +31,14 @@ export const coreServices: Service[] = [
     title: "Database Design & Optimization",
     description: "Schema design, query optimization, data modeling.",
   },
+  {
+    title: "AI Integration",
+    description: "Embed LLMs, RAG pipelines, and intelligent automation into your products.",
+  },
+  {
+    title: "Low-Code / No-Code Web Apps",
+    description: "Rapid internal tools and workflows on low-code platforms, shipped fast without sacrificing flexibility.",
+  },
 ];
 
 export const additionalServices: Service[] = [
