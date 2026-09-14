@@ -31,6 +31,14 @@ export const coreServices: Service[] = [
     title: "Database Design & Optimization",
     description: "Schema design, query optimization, data modeling.",
   },
+  {
+    title: "AI Integration",
+    description: "Embed LLMs, RAG pipelines, and intelligent automation into your products.",
+  },
+  {
+    title: "Low-Code / No-Code Web Apps",
+    description: "Rapid internal tools and workflows on low-code platforms, shipped fast without sacrificing flexibility.",
+  },
 ];
 
 export const additionalServices: Service[] = [
@@ -38,6 +46,7 @@ export const additionalServices: Service[] = [
   { title: "Payment Integration", description: "Stripe, Razorpay, PayPal gateway setup." },
   { title: "Deployment & DevOps", description: "AWS/Azure deployment, Docker, CI/CD pipelines." },
   { title: "Maintenance & Support", description: "Ongoing updates, bug fixes, and monitoring after launch." },
+  { title: "Data Analytics Dashboards", description: "Turn raw data into clear, actionable reporting and analytics views." },
 ];
 
 export const skillGroups: { category: string; items: string[] }[] = [
