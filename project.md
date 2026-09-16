@@ -84,3 +84,10 @@ Sharing thoughts online often means stiff, text-only editors that lose the conte
 Tech stack: React, JavaScript, Firebase, MongoDB
 
 GitHub: https://github.com/Adityaachaudhary
+
+### Razorpay Payment Integration
+Payment integration can feel abstract until it's wired end-to-end in a real application. This project implements Razorpay checkout from start to finish — generating orders server-side, verifying signatures, handling success and failure states, and confirming transactions — so the full payment flow of a production app can be understood and reproduced instead of only read about.
+
+Tech stack: Razorpay, Payment Gateway Integration, Webhooks, Node.js, React
+
+GitHub: https://github.com/Adityaachaudhary
