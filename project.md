@@ -95,6 +95,6 @@ GitHub: https://github.com/Adityaachaudhary
 ### Metro Safety & Navigation App (In Progress)
 Traveling alone at night in a metro city is risky, and figuring out a safe route home — metro, cab, and last-mile walk — usually means stitching together separate apps with no safety net. This app shows all metro maps, lets users book a Razorpay-paid cab from the station to their hostel or room, and provides turn-by-turn navigation through the metro and out of the station, so a female traveler has one guided, secure path from start to door instead of navigating blind. Work is still in progress.
 
-Tech stack: React, Razorpay, Maps Navigation, Metro Maps, Cab Booking, Real-time Routing
+Tech stack: React Native, Expo, Razorpay, Maps Navigation, Metro Maps, Cab Booking, Real-time Routing
 
 GitHub: https://github.com/Adityaachaudhary
