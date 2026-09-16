@@ -63,3 +63,10 @@ Tech stack: TypeScript, React, Cloudflare Hono, D1 and KV, Tailwind CSS, Resend 
 
 GitHub: https://github.com/Adityaachaudhary/Survey-Builder
 Live demo: https://survey-builder-web.vercel.app/
+
+### E-Commerce Power BI Dashboard
+Raw e-commerce data is hard to act on when it sits in messy spreadsheets and disconnected tables. This project takes raw sales, customer, and product data and walks through every step of the data-visualization pipeline — cleaning and shaping the data, modeling relationships, building measures, and designing interactive dashboards — so the business can finally see what is selling, who is buying, and where to focus next.
+
+Tech stack: Power BI, DAX, Data Modeling, Data Cleaning, Data Visualization, ETL
+
+GitHub: https://github.com/Adityaachaudhary
