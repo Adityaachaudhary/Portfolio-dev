@@ -77,3 +77,10 @@ Browsing trips and figuring out the right one to book usually means jumping betw
 Tech stack: TypeScript, React, Chatbot Integration, Booking System
 
 GitHub: https://github.com/Adityaachaudhary
+
+### Blogging Platform
+Sharing thoughts online often means stiff, text-only editors that lose the context images and visuals add. This blogging platform lets users write and publish their posts and upload images alongside the text, so each entry reads as a richer, more engaging story instead of a wall of words.
+
+Tech stack: React, JavaScript, Firebase, MongoDB
+
+GitHub: https://github.com/Adityaachaudhary
