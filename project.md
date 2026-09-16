@@ -70,3 +70,10 @@ Raw e-commerce data is hard to act on when it sits in messy spreadsheets and dis
 Tech stack: Power BI, DAX, Data Modeling, Data Cleaning, Data Visualization, ETL
 
 GitHub: https://github.com/Adityaachaudhary
+
+### Hotel Booking Website (MVP)
+Browsing trips and figuring out the right one to book usually means jumping between listings, details, and pricing with no quick way to get answers. This MVP lets users browse available trips, ask an integrated chatbot questions about each trip's details and price, and book tickets directly from the site — so the whole flow from discovery to booking stays in one place instead of scattering across tabs.
+
+Tech stack: TypeScript, React, Chatbot Integration, Booking System
+
+GitHub: https://github.com/Adityaachaudhary
